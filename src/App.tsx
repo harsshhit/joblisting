@@ -36,10 +36,10 @@ const App: React.FC = () => {
   const fetchJobs = async () => {
     try {
       const url = searchLocation
-        ? `https://test-a6ng.onrender.com/api/jobs?location=${encodeURIComponent(
+        ? `https://test-1-emgk.onrender.com/api/jobs?location=${encodeURIComponent(
             searchLocation
           )}`
-        : "https://test-a6ng.onrender.com/api/jobs";
+        : "https://test-1-emgk.onrender.com/api/jobs";
       const response = await fetch(url);
       const data = await response.json();
       setJobs(data);
