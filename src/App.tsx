@@ -3,7 +3,7 @@ import JobList from "./components/JobList";
 import JobDetails from "./components/JobDetails";
 import SearchBar from "./components/SearchBar";
 import DarkModeToggle from "./components/DarkModeToggle";
-import Particles from "./components/Particles";
+// import Particles from "./components/Particles";
 
 interface Job {
   _id: string;
@@ -30,10 +30,10 @@ const App: React.FC = () => {
   const fetchJobs = async () => {
     try {
       const url = searchLocation
-        ? `http://localhost:5000/api/jobs?location=${encodeURIComponent(
+        ? `https://job-mu98.onrender.com/api/v1/jobs/get-jobs?location=${encodeURIComponent(
             searchLocation
           )}`
-        : "http://localhost:5000/api/jobs";
+        : "https://job-mu98.onrender.com/api/v1/jobs/get-jobs";
       const response = await fetch(url);
       const data = await response.json();
       setJobs(data);
@@ -60,7 +60,6 @@ const App: React.FC = () => {
         darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"
       }`}
     >
-      <Particles />
       <div className="container mx-auto p-4 relative z-10">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-900 to-cyan-700">
