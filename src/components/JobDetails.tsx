@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 
 interface Job {
+  _id: string;
   title: string;
   company: string;
   location: string;
@@ -23,6 +24,7 @@ interface Job {
   country: string;
   companyImageUrl: string;
 }
+
 
 interface JobDetailsProps {
   job: Job | null;

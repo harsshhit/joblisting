@@ -15,7 +15,13 @@ interface Job {
   source: string;
   postedDateTime: string;
   description?: string;
+  job_link: string;
+  min_exp: string;
+  max_exp: string;
+  country: string;
+  companyImageUrl: string;
 }
+
 
 const App: React.FC = () => {
   const [jobs, setJobs] = useState<Job[]>([]);
@@ -30,10 +36,10 @@ const App: React.FC = () => {
   const fetchJobs = async () => {
     try {
       const url = searchLocation
-        ? `https://job-mu98.onrender.com/api/v1/jobs/get-jobs?location=${encodeURIComponent(
+        ? `https://test-a6ng.onrender.com/api/jobs?location=${encodeURIComponent(
             searchLocation
           )}`
-        : "https://job-mu98.onrender.com/api/v1/jobs/get-jobs";
+        : "https://test-a6ng.onrender.com/api/jobs";
       const response = await fetch(url);
       const data = await response.json();
       setJobs(data);

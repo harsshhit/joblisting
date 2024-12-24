@@ -6,7 +6,18 @@ interface Job {
   title: string;
   company: string;
   location: string;
+  employment_type: string;
+  experience: string;
+  source: string;
+  postedDateTime: string;
+  description?: string;
+  job_link: string;
+  min_exp: string;
+  max_exp: string;
+  country: string;
+  companyImageUrl: string;
 }
+
 
 interface JobListProps {
   jobs: Job[];
